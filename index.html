@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Precision POS - Inventory Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9fb",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "primary-fixed": "#dae2ff",
+                        "secondary-fixed": "#ffdbcb",
+                        "on-primary-fixed": "#001946",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "secondary": "#9f4200",
+                        "tertiary-fixed-dim": "#8dcdff",
+                        "on-background": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary": "#003a58",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-container": "#a5bdff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#562000",
+                        "background": "#f8f9fb",
+                        "on-secondary-fixed": "#341100",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eceef0",
+                        "tertiary-container": "#00527a",
+                        "inverse-primary": "#b1c5ff",
+                        "outline-variant": "#c3c6d5",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#79c6ff",
+                        "surface-variant": "#e0e3e5",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed-variant": "#00419e",
+                        "primary": "#00327d",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#434653",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#cae6ff",
+                        "secondary-fixed-dim": "#ffb692",
+                        "primary-container": "#0047ab",
+                        "outline": "#737784",
+                        "surface-tint": "#2559bd",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-fixed": "#001e30",
+                        "on-tertiary-fixed-variant": "#004b70",
+                        "surface": "#f8f9fb",
+                        "secondary-container": "#fd6c00"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fb;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="text-on-surface selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f8f9fb] dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00327d] dark:text-blue-400" data-icon="storefront">storefront</span>
+<h1 class="font-['Manrope'] font-extrabold tracking-tighter text-[#00327d] dark:text-blue-400 text-lg">Nexus 精準收銀</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#eceef0] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#191c1e] dark:text-slate-400" data-icon="search">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#eceef0] transition-colors active:scale-95 duration-200 relative">
+<span class="material-symbols-outlined text-[#191c1e] dark:text-slate-400" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Search and Filter Section -->
+<section class="mb-8 space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<h2 class="font-headline font-bold text-2xl tracking-tight text-primary">商品庫存</h2>
+<div class="flex items-center gap-2">
+<span class="text-label-md text-on-surface-variant font-medium">商品總數: 124</span>
+</div>
+</div>
+<!-- Bento Filter Bar -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+<div class="md:col-span-7 bg-surface-container-low rounded-xl p-1 flex items-center">
+<div class="pl-4 pr-2">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body text-body-lg py-3" placeholder="搜尋名稱、SKU 或條碼..." type="text"/>
+</div>
+<div class="md:col-span-5 flex gap-2 overflow-x-auto hide-scrollbar pb-1 md:pb-0">
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-primary text-on-primary font-medium text-sm flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>所有分類</button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant transition-colors font-medium text-sm">電子產品</button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant transition-colors font-medium text-sm">服飾</button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant transition-colors font-medium text-sm">居家</button>
+</div>
+</div>
+</section>
+<!-- Product Grid/List -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse text-left">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label text-xs uppercase tracking-widest">
+<th class="px-6 py-4 font-semibold">商品詳情</th>
+<th class="px-6 py-4 font-semibold">貨號</th>
+<th class="px-6 py-4 font-semibold text-right">售價</th>
+<th class="px-6 py-4 font-semibold text-center">庫存水位</th>
+<th class="px-6 py-4 font-semibold">狀態</th>
+<th class="px-6 py-4 font-semibold text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15">
+<!-- Product Item 1 -->
+<tr class="bg-surface-container-lowest hover:bg-primary-fixed/20 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-outline-variant/10">
+<img class="w-full h-full object-cover" data-alt="High quality studio headphones on stand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLuRUZz9TdXzf7Ar4RTwg8hM2ucOpfc2fIXKRyUP77iS1OV866Qzp3b6KoUAsuNAYKSTJovrUpbqrtB0mOtv2QskztK1PNBBVzRMPy0lmd7iHIHYmdvo45xnfiS4lAscXBRb9kFRVMtLy4qu60fJb8hdC6CocfQ1gU9d6_2OqcA8cQ-j_aVBXzGAsen-Ien3pIOd-tnpj7n_mNv9rUXD3Q6qy9Cn7KQ0zEucvImYwcGZRnguYmj3dD36_JzDK0Oy2SFu3NETOXNWlF"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface">Pro Audio Headphones X1</div>
+<div class="text-xs text-on-surface-variant">電子產品 • 音訊</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-mono text-sm text-on-surface-variant">PH-X1-BL-092</td>
+<td class="px-6 py-5 text-right font-headline font-bold text-primary">$129.00</td>
+<td class="px-6 py-5">
+<div class="flex flex-col items-center gap-1">
+<span class="font-bold text-on-surface">42</span>
+<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[80%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-[11px] font-bold uppercase tracking-tight">In Stock</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Product Item 2 (Low Stock) -->
+<tr class="bg-surface-bright group hover:bg-primary-fixed/20 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-outline-variant/10">
+<img class="w-full h-full object-cover" data-alt="Minimalist white ceramic designer watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXu9muLsl-MCgEeyOmhu-7MXglxTg_cNtnjiSEgYBvnRK_dYqfAM9wAgtwidrIe-mrcubXPSZrNYFzRU8Xs_7vGEdpCWn6w1zl5HH8gQPLdFgZcR77q6x5Pt6BtqgM3VYmLnOikx8K9xdyUYjwY3d1Ob6y0R18wFndmrPplaVLvKQgmBNZ_I7sXG-9pC8tWPyTaOrafTntgoSwTbKtcZPnNclrX2dfkYhjlrZllc5OJ8kzQXTYyZ_0JZnb163FiVYYDB-MVcv-OI2K"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface">Minimalist Ceramic Watch</div>
+<div class="text-xs text-on-surface-variant">配件 • 手錶</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-mono text-sm text-on-surface-variant">WA-MIN-WH-40</td>
+<td class="px-6 py-5 text-right font-headline font-bold text-primary">$89.50</td>
+<td class="px-6 py-5">
+<div class="flex flex-col items-center gap-1">
+<span class="font-bold text-secondary">8</span>
+<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-[15%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-secondary text-[11px] font-bold uppercase tracking-tight">Low Stock</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Product Item 3 (Out of Stock) -->
+<tr class="bg-surface-container-lowest group hover:bg-primary-fixed/20 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4 opacity-60">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale" data-alt="Bright red performance running shoes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbSYlSFmC7rT1IKbZpS0MzQAomhQi6hbZ6d0ab4Qq-prLWmO6z90WaucNbbPzP2F9VrUPNAJywxX4o-iZTkSbOq4GKxPj0RRUcPtLuxqABKXmSl5ZbKztsLFRWC_Ffli-uBZrhcxP_N_zgnDzivGsiN3b0QAXR7sghJXMI__YcxKL_45n3kMv_QyB0SRA4bNvzOjguSvtihViyHHb07Fi4-ZhDtgjVmWyLT3t_6oENQYPtEnxe5zPbRsdVW2I_3lF9CgU6gVc6ipIP"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface">CloudRunner Performance</div>
+<div class="text-xs text-on-surface-variant">服飾 • 鞋類</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-mono text-sm text-on-surface-variant">SH-CRP-RD-11</td>
+<td class="px-6 py-5 text-right font-headline font-bold text-primary">$155.00</td>
+<td class="px-6 py-5">
+<div class="flex flex-col items-center gap-1">
+<span class="font-bold text-error">0</span>
+<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full w-0"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-red-100 text-error text-[11px] font-bold uppercase tracking-tight">Out of Stock</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Product Item 4 -->
+<tr class="bg-surface-container-lowest group hover:bg-primary-fixed/20 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-outline-variant/10">
+<img class="w-full h-full object-cover" data-alt="Slim metallic digital tablet device" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTtVTLSwB3I__RuBBWIK9YmcfzPmbOOQHmhspOKzw3AYrZPYq2eVe9PPhw0XrSwMyUuAeVYWGYG4o-aJyw4kiVxRniihNOTLpo040szbIgeZN6yNkKiLvNQ_aBycdqINA7-saOL96kgPc2hVEB36zpxccd7m2xyQOdX89F7a_1ME3ygrJFm_19TRrQGTd-DCNpTi0t7iHmvH2wvA-pTE6AwlTCb3QAbeirxHlGuou_nDwlIfUevvwD1hAgwSQCoJg1AdPHihBr7Top"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface">TabPro Ultra 12"</div>
+<div class="text-xs text-on-surface-variant">電子產品 • 電腦</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-mono text-sm text-on-surface-variant">EL-TPU-SL-12</td>
+<td class="px-6 py-5 text-right font-headline font-bold text-primary">$799.00</td>
+<td class="px-6 py-5">
+<div class="flex flex-col items-center gap-1">
+<span class="font-bold text-on-surface">15</span>
+<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[35%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-[11px] font-bold uppercase tracking-tight">In Stock</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination-like footer for the list -->
+<div class="px-6 py-4 bg-surface-container-high flex items-center justify-between">
+<span class="text-xs text-on-surface-variant font-medium">顯示 124 項商品中的第 4 項</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary text-xs font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs font-medium">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs font-medium">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Management FAB -->
+<button class="fixed bottom-24 right-6 md:right-12 w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full shadow-xl flex items-center justify-center hover:scale-105 active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[1.5rem] bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl border-t border-[#c3c6d5]/15 shadow-[0_-4px_20px_rgba(25,28,30,0.06)] flex justify-around items-center h-20 px-4 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-[#191c1e]/60 dark:text-slate-400 px-5 py-1.5 hover:text-[#00327d] dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="point_of_sale">point_of_sale</span>
+<span class="font-['Inter'] font-medium text-[11px]">收銀</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#dae2ff] dark:bg-blue-900/40 text-[#00327d] dark:text-blue-100 rounded-2xl px-5 py-1.5 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] font-medium text-[11px]">商品</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#191c1e]/60 dark:text-slate-400 px-5 py-1.5 hover:text-[#00327d] dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Inter'] font-medium text-[11px]">訂單</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#191c1e]/60 dark:text-slate-400 px-5 py-1.5 hover:text-[#00327d] dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Inter'] font-medium text-[11px]">報表</span>
+</a>
+</nav>
+</body></html>
