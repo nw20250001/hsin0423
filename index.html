@@ -2,8 +2,8 @@
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Precision POS - Inventory Management</title>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>The Precision POS</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -14,60 +14,65 @@
             theme: {
                 extend: {
                     colors: {
-                        "surface-bright": "#f8f9fb",
-                        "primary-fixed-dim": "#b1c5ff",
-                        "primary-fixed": "#dae2ff",
-                        "secondary-fixed": "#ffdbcb",
-                        "on-primary-fixed": "#001946",
-                        "on-surface": "#191c1e",
-                        "on-secondary-fixed-variant": "#7a3000",
-                        "secondary": "#9f4200",
-                        "tertiary-fixed-dim": "#8dcdff",
-                        "on-background": "#191c1e",
-                        "surface-container-lowest": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "surface-container-low": "#f2f4f6",
-                        "tertiary": "#003a58",
-                        "surface-dim": "#d8dadc",
-                        "on-primary-container": "#a5bdff",
-                        "on-secondary": "#ffffff",
-                        "inverse-surface": "#2d3133",
-                        "on-primary": "#ffffff",
-                        "on-error": "#ffffff",
-                        "on-secondary-container": "#562000",
-                        "background": "#f8f9fb",
-                        "on-secondary-fixed": "#341100",
-                        "error": "#ba1a1a",
-                        "surface-container": "#eceef0",
-                        "tertiary-container": "#00527a",
-                        "inverse-primary": "#b1c5ff",
-                        "outline-variant": "#c3c6d5",
-                        "error-container": "#ffdad6",
-                        "on-tertiary-container": "#79c6ff",
-                        "surface-variant": "#e0e3e5",
                         "inverse-on-surface": "#eff1f3",
-                        "on-primary-fixed-variant": "#00419e",
-                        "primary": "#00327d",
-                        "surface-container-highest": "#e0e3e5",
-                        "on-surface-variant": "#434653",
-                        "on-tertiary": "#ffffff",
-                        "tertiary-fixed": "#cae6ff",
-                        "secondary-fixed-dim": "#ffb692",
-                        "primary-container": "#0047ab",
-                        "outline": "#737784",
-                        "surface-tint": "#2559bd",
-                        "surface-container-high": "#e6e8ea",
-                        "on-tertiary-fixed": "#001e30",
-                        "on-tertiary-fixed-variant": "#004b70",
                         "surface": "#f8f9fb",
-                        "secondary-container": "#fd6c00"
+                        "primary-fixed": "#dae2ff",
+                        "on-tertiary-fixed": "#001e30",
+                        "surface-container": "#eceef0",
+                        "background": "#f8f9fb",
+                        "outline": "#737784",
+                        "on-tertiary-container": "#79c6ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#b1c5ff",
+                        "primary-container": "#0047ab",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#8dcdff",
+                        "outline-variant": "#c3c6d5",
+                        "on-tertiary-fixed-variant": "#004b70",
+                        "on-secondary-container": "#562000",
+                        "on-secondary-fixed": "#341100",
+                        "secondary-container": "#fd6c00",
+                        "secondary": "#9f4200",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#ffdbcb",
+                        "on-surface-variant": "#434653",
+                        "primary": "#00327d",
+                        "surface-variant": "#e0e3e5",
+                        "on-background": "#191c1e",
+                        "tertiary": "#003a58",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "secondary-fixed-dim": "#ffb692",
+                        "surface-tint": "#2559bd",
+                        "surface-bright": "#f8f9fb",
+                        "on-primary-container": "#a5bdff",
+                        "inverse-surface": "#2d3133",
+                        "on-primary-fixed": "#001946",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-primary-fixed-variant": "#00419e",
+                        "tertiary-container": "#00527a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#cae6ff"
                     },
                     fontFamily: {
-                        "headline": ["Manrope"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
                 },
             },
         }
@@ -75,14 +80,15 @@
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
         }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fb;
+        .active-tab .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
         }
-        .hide-scrollbar::-webkit-scrollbar {
+        .page-container {
             display: none;
+        }
+        .page-container.active {
+            display: block;
         }
     </style>
 <style>
@@ -90,253 +96,452 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-</head>
-<body class="text-on-surface selection:bg-primary-fixed">
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-[#f8f9fb] dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[#00327d] dark:text-blue-400" data-icon="storefront">storefront</span>
-<h1 class="font-['Manrope'] font-extrabold tracking-tighter text-[#00327d] dark:text-blue-400 text-lg">Nexus 精準收銀</h1>
+<span class="material-symbols-outlined text-[#00327d] dark:text-blue-400">storefront</span>
+<h1 class="font-headline font-extrabold tracking-tighter text-[#00327d] dark:text-blue-400 text-lg">The Precision POS</h1>
 </div>
 <div class="flex items-center gap-4">
 <button class="p-2 rounded-full hover:bg-[#eceef0] transition-colors active:scale-95 duration-200">
-<span class="material-symbols-outlined text-[#191c1e] dark:text-slate-400" data-icon="search">search</span>
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
 </button>
-<button class="p-2 rounded-full hover:bg-[#eceef0] transition-colors active:scale-95 duration-200 relative">
-<span class="material-symbols-outlined text-[#191c1e] dark:text-slate-400" data-icon="notifications">notifications</span>
-<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+<button class="p-2 rounded-full hover:bg-[#eceef0] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
 </button>
 </div>
 </header>
-<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
-<!-- Search and Filter Section -->
-<section class="mb-8 space-y-6">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-<h2 class="font-headline font-bold text-2xl tracking-tight text-primary">商品庫存</h2>
-<div class="flex items-center gap-2">
-<span class="text-label-md text-on-surface-variant font-medium">商品總數: 124</span>
+<main class="pt-20 pb-28 min-h-screen px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Screen 1: Register (收銀台) -->
+<section class="page-container active space-y-6" id="page-register">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Product Grid -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-medium text-sm shrink-0">All items</button>
+<button class="px-6 py-2 rounded-full bg-surface-variant text-on-surface-variant font-medium text-sm shrink-0 hover:bg-surface-container-high">Coffee</button>
+<button class="px-6 py-2 rounded-full bg-surface-variant text-on-surface-variant font-medium text-sm shrink-0 hover:bg-surface-container-high">Bakery</button>
+<button class="px-6 py-2 rounded-full bg-surface-variant text-on-surface-variant font-medium text-sm shrink-0 hover:bg-surface-container-high">Tea</button>
+<button class="px-6 py-2 rounded-full bg-surface-variant text-on-surface-variant font-medium text-sm shrink-0 hover:bg-surface-container-high">Sandwiches</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
+<!-- Product Card -->
+<div class="bg-surface-container-lowest p-4 rounded-lg flex flex-col gap-3 group cursor-pointer hover:shadow-lg transition-all border border-transparent hover:border-primary/20">
+<div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Artisanal cafe latte with foam art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk9fYQEq5t4J-eLgTm1hSB2d9eRIFNW_u__GJ7mUBgNiS9l8ECpNSQeiXgqxzo_yQ_o28RAdKowPdYwKTQsE_rDab0sN_LA0tUJDoqR1rj5nd9veOnhWMK6OdkkR6S94pGKAd0i-lsuBG_kJTfba6w6tZBlvYkavUyr87T81yqvKij-MuF1pH1NGbNIoBnfixDkoWM0FYTru7KPCHtJckb_F9xLQeFqnJbjykJi6_Mccs5dptpmAn-62oxcK8M31eyAY2-Gwrpuu1x"/>
+<span class="absolute top-2 right-2 px-2 py-1 bg-white/90 backdrop-blur rounded-md text-[10px] font-bold text-primary">$4.50</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-sm text-on-surface truncate">Signature Latte</h3>
+<p class="text-xs text-on-surface-variant">Hot / Medium</p>
 </div>
 </div>
-<!-- Bento Filter Bar -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-3">
-<div class="md:col-span-7 bg-surface-container-low rounded-xl p-1 flex items-center">
-<div class="pl-4 pr-2">
-<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<div class="bg-surface-container-lowest p-4 rounded-lg flex flex-col gap-3 group cursor-pointer hover:shadow-lg transition-all border border-transparent hover:border-primary/20">
+<div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Fresh dark espresso beans in a cup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT3fckfucwWJ69XmfS7DDLAoMDnWMyqmd0vnlHfBfn52HdzCwdsJD-9uEa9GTVBq4XbioB_GGVBzP7qj-CVa8sHHuzgfQ0Mjw5vbo4ZYhkivUTSvaP6lTnrnlnqWO0G7E0oPn8AUwfReguaYROrwov7NVp7hBBOmzPWFzWtx9gzXybUTRlp0v1LOocO-ci78_H1ZwRxzs1D4Xjutg18MH159cXtd6WeJcuxsax-vKvWntfrZf5eroG6UT2v50a4fzyt1jBoMTmI-bL"/>
+<span class="absolute top-2 right-2 px-2 py-1 bg-white/90 backdrop-blur rounded-md text-[10px] font-bold text-primary">$3.20</span>
 </div>
-<input class="bg-transparent border-none focus:ring-0 w-full font-body text-body-lg py-3" placeholder="搜尋名稱、SKU 或條碼..." type="text"/>
+<div>
+<h3 class="font-headline font-bold text-sm text-on-surface truncate">Double Espresso</h3>
+<p class="text-xs text-on-surface-variant">Hot / Small</p>
 </div>
-<div class="md:col-span-5 flex gap-2 overflow-x-auto hide-scrollbar pb-1 md:pb-0">
-<button class="whitespace-nowrap px-6 py-3 rounded-full bg-primary text-on-primary font-medium text-sm flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>所有分類</button>
-<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant transition-colors font-medium text-sm">電子產品</button>
-<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant transition-colors font-medium text-sm">服飾</button>
-<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant transition-colors font-medium text-sm">居家</button>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg flex flex-col gap-3 group cursor-pointer hover:shadow-lg transition-all border border-transparent hover:border-primary/20">
+<div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Classic hot cappuccino in ceramic mug" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgGJe3hgkdXijvK8J2q56ZGC1HktNUHubrhzLlJeZzucf2mmYDqo7aNZfjhX7SFs7gHMO-4eWwnLZ3C9zMiAN63MvNPlifhsF1fCsqizAGmCypz9xMLLUmw72LVp57qrcwpTxOXMuiz5fBoQ0pG6T2s4ZKPyKsKjwdM9Ak920xPbukEZ3qVkq8sEqGQwJce0GXa_4odD3Pp1HvqMC2c-ksdyxYgLqbB0bw56IXi5CVm7PaA-oRZlF8O_IE9U1u2gKFMjt-3qaKpJ_C"/>
+<span class="absolute top-2 right-2 px-2 py-1 bg-white/90 backdrop-blur rounded-md text-[10px] font-bold text-primary">$4.80</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-sm text-on-surface truncate">Cappuccino</h3>
+<p class="text-xs text-on-surface-variant">Hot / Large</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg flex flex-col gap-3 group cursor-pointer hover:shadow-lg transition-all border border-transparent hover:border-primary/20">
+<div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Iced americano with ice cubes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XeCF6n_DmupE2_0NFjSjUUvo3ntmFCmJeuwGB3Y4AlbREy2rDYwS-hTw7VLnWipox8o3en_8HCX1wt5EtV4Lvg1lWZeev0YOb8VO1XAy3RRlD6bbv4ZoThUy0C50YdhnGZ_xKtZMLZkAj-FFiskEPlO9gMl-im372rdEsSIcucwASNBgOjdpK1xRlIPfXdR3mDX_S9Cq73-s3uTtHYA_Twig2UgY0jCi-z1Lxbw5ot1DVMJ44Yml0wXhzkaomTfS_b1hvS-DEKoe"/>
+<span class="absolute top-2 right-2 px-2 py-1 bg-white/90 backdrop-blur rounded-md text-[10px] font-bold text-primary">$3.50</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-sm text-on-surface truncate">Iced Americano</h3>
+<p class="text-xs text-on-surface-variant">Cold / Large</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Tray -->
+<div class="lg:col-span-4 flex flex-col h-full min-h-[500px] bg-surface-container-highest rounded-xl overflow-hidden">
+<div class="p-6 bg-surface-container-lowest border-b border-outline-variant/15">
+<h2 class="font-headline font-bold text-lg flex items-center justify-between">
+                            Current Order
+                            <span class="text-xs font-normal text-on-surface-variant">#2849</span>
+</h2>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+<!-- Line Items -->
+<div class="bg-surface-bright p-3 rounded-lg flex justify-between items-center shadow-sm">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-xs">x2</div>
+<div>
+<p class="font-medium text-sm">Signature Latte</p>
+<p class="text-[10px] text-on-surface-variant italic">Hot, Whole Milk</p>
+</div>
+</div>
+<p class="font-bold text-sm">$9.00</p>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg flex justify-between items-center">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded bg-surface-variant text-on-surface-variant flex items-center justify-center font-bold text-xs">x1</div>
+<div>
+<p class="font-medium text-sm">Almond Croissant</p>
+<p class="text-[10px] text-on-surface-variant italic">Warmed</p>
+</div>
+</div>
+<p class="font-bold text-sm">$5.50</p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest border-t border-outline-variant/15 space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Subtotal</span>
+<span>$14.50</span>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Tax (8%)</span>
+<span>$1.16</span>
+</div>
+<div class="flex justify-between text-lg font-headline font-extrabold text-primary">
+<span>Total</span>
+<span>$15.66</span>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-white font-headline font-bold py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all">
+                            CHECKOUT
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
 </div>
 </div>
 </section>
-<!-- Product Grid/List -->
-<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<!-- Screen 2: Products (商品庫存) -->
+<section class="page-container space-y-6" id="page-products">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="font-headline font-bold text-2xl">Inventory Management</h2>
+<p class="text-on-surface-variant text-sm">Manage products, stock levels and categories</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined">add</span>
+                    New Product
+                </button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="p-4 bg-surface-container-low flex flex-wrap gap-4 items-center">
+<div class="flex-1 min-w-[200px] relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-lg pl-10 text-sm focus:ring-2 focus:ring-primary/40" placeholder="Search SKU or name..." type="text"/>
+</div>
+<select class="bg-surface-container-high border-none rounded-lg text-sm px-4 focus:ring-2 focus:ring-primary/40">
+<option>All Categories</option>
+<option>Beverages</option>
+<option>Bakery</option>
+<option>Merchandise</option>
+</select>
+</div>
 <div class="overflow-x-auto">
-<table class="w-full border-collapse text-left">
-<thead>
-<tr class="bg-surface-container text-on-surface-variant font-label text-xs uppercase tracking-widest">
-<th class="px-6 py-4 font-semibold">商品詳情</th>
-<th class="px-6 py-4 font-semibold">貨號</th>
-<th class="px-6 py-4 font-semibold text-right">售價</th>
-<th class="px-6 py-4 font-semibold text-center">庫存水位</th>
-<th class="px-6 py-4 font-semibold">狀態</th>
-<th class="px-6 py-4 font-semibold text-right">操作</th>
+<table class="w-full text-left">
+<thead class="bg-surface-container border-b border-outline-variant/15">
+<tr>
+<th class="px-6 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant">Product</th>
+<th class="px-6 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant">SKU</th>
+<th class="px-6 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant">Category</th>
+<th class="px-6 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant">Stock</th>
+<th class="px-6 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant">Price</th>
+<th class="px-6 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant text-right">Actions</th>
 </tr>
 </thead>
 <tbody class="divide-y divide-outline-variant/15">
-<!-- Product Item 1 -->
-<tr class="bg-surface-container-lowest hover:bg-primary-fixed/20 transition-colors group">
-<td class="px-6 py-5">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-outline-variant/10">
-<img class="w-full h-full object-cover" data-alt="High quality studio headphones on stand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLuRUZz9TdXzf7Ar4RTwg8hM2ucOpfc2fIXKRyUP77iS1OV866Qzp3b6KoUAsuNAYKSTJovrUpbqrtB0mOtv2QskztK1PNBBVzRMPy0lmd7iHIHYmdvo45xnfiS4lAscXBRb9kFRVMtLy4qu60fJb8hdC6CocfQ1gU9d6_2OqcA8cQ-j_aVBXzGAsen-Ien3pIOd-tnpj7n_mNv9rUXD3Q6qy9Cn7KQ0zEucvImYwcGZRnguYmj3dD36_JzDK0Oy2SFu3NETOXNWlF"/>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Small latte image thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9JCX3hiMorDepV7dCxhZeNDaZveTQttDNzkOiEs-nqTrX0tOWc9e53gBJ-mHeXoiOT3DoF4ALVTRjB9o26VcTKFN1IIbv-jtmJqi2c8x8ehSIffpkkiLus4mNAxmZKww93xLKZjw-28jnR-4ksGc39sdpO1mPrpSGEKMNqnI_o2g48RxrQeFSvQZ_w44yE1WFW_P5xNkJWDbPEmgP7S3l4X2D-Yd8BWu9lP_G4MhRuh9SGtVKjY6DIo2hTxIHlIdNOGrRjMgeLz6l"/>
 </div>
-<div>
-<div class="font-headline font-bold text-on-surface">Pro Audio Headphones X1</div>
-<div class="text-xs text-on-surface-variant">電子產品 • 音訊</div>
-</div>
+<span class="font-medium text-sm">Signature Latte</span>
 </div>
 </td>
-<td class="px-6 py-5 font-mono text-sm text-on-surface-variant">PH-X1-BL-092</td>
-<td class="px-6 py-5 text-right font-headline font-bold text-primary">$129.00</td>
-<td class="px-6 py-5">
-<div class="flex flex-col items-center gap-1">
-<span class="font-bold text-on-surface">42</span>
-<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-primary rounded-full w-[80%]"></div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5">
-<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-[11px] font-bold uppercase tracking-tight">In Stock</span>
-</td>
-<td class="px-6 py-5 text-right">
-<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="edit">edit</span>
-</button>
-<button class="p-2 hover:bg-surface-container rounded-lg text-error transition-colors">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
+<td class="px-6 py-4 text-sm font-mono text-on-surface-variant">COF-001</td>
+<td class="px-6 py-4"><span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold rounded-full">BEVERAGE</span></td>
+<td class="px-6 py-4 text-sm"><span class="text-green-600 font-bold">142 In Stock</span></td>
+<td class="px-6 py-4 text-sm font-bold">$4.50</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-surface-container rounded-full"><span class="material-symbols-outlined text-on-surface-variant">edit</span></button>
 </td>
 </tr>
-<!-- Product Item 2 (Low Stock) -->
-<tr class="bg-surface-bright group hover:bg-primary-fixed/20 transition-colors">
-<td class="px-6 py-5">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-outline-variant/10">
-<img class="w-full h-full object-cover" data-alt="Minimalist white ceramic designer watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXu9muLsl-MCgEeyOmhu-7MXglxTg_cNtnjiSEgYBvnRK_dYqfAM9wAgtwidrIe-mrcubXPSZrNYFzRU8Xs_7vGEdpCWn6w1zl5HH8gQPLdFgZcR77q6x5Pt6BtqgM3VYmLnOikx8K9xdyUYjwY3d1Ob6y0R18wFndmrPplaVLvKQgmBNZ_I7sXG-9pC8tWPyTaOrafTntgoSwTbKtcZPnNclrX2dfkYhjlrZllc5OJ8kzQXTYyZ_0JZnb163FiVYYDB-MVcv-OI2K"/>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Freshly baked croissant thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR1DB7oM3qGjw6QKSYbjEynd5LcNRB80DjmEAhY-RiQ0yvPBrfVv1LCA9oBsrexpqqYbS1scoPT5XFvUjTQlve7YDgEMS80UK2QFM0w58sQygnkyTGZsbo1PHTVUoPrqz6UWQT9nIvys7a8BrTV8L2CcWsaarFJg1huWJSHHg_tjMGqHNHGC-_qo4HSNYADwcegLfrt039XBcmC_N555AftOyxaLfFWHBaBSz57xBTgnViZYcmMSnZqifGoVxCdYtaXnsLb7QErGQU"/>
 </div>
-<div>
-<div class="font-headline font-bold text-on-surface">Minimalist Ceramic Watch</div>
-<div class="text-xs text-on-surface-variant">配件 • 手錶</div>
-</div>
+<span class="font-medium text-sm">Butter Croissant</span>
 </div>
 </td>
-<td class="px-6 py-5 font-mono text-sm text-on-surface-variant">WA-MIN-WH-40</td>
-<td class="px-6 py-5 text-right font-headline font-bold text-primary">$89.50</td>
-<td class="px-6 py-5">
-<div class="flex flex-col items-center gap-1">
-<span class="font-bold text-secondary">8</span>
-<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-secondary rounded-full w-[15%]"></div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5">
-<span class="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-secondary text-[11px] font-bold uppercase tracking-tight">Low Stock</span>
-</td>
-<td class="px-6 py-5 text-right">
-<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="edit">edit</span>
-</button>
-<button class="p-2 hover:bg-surface-container rounded-lg text-error transition-colors">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Product Item 3 (Out of Stock) -->
-<tr class="bg-surface-container-lowest group hover:bg-primary-fixed/20 transition-colors">
-<td class="px-6 py-5">
-<div class="flex items-center gap-4 opacity-60">
-<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-outline-variant/10">
-<img class="w-full h-full object-cover grayscale" data-alt="Bright red performance running shoes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbSYlSFmC7rT1IKbZpS0MzQAomhQi6hbZ6d0ab4Qq-prLWmO6z90WaucNbbPzP2F9VrUPNAJywxX4o-iZTkSbOq4GKxPj0RRUcPtLuxqABKXmSl5ZbKztsLFRWC_Ffli-uBZrhcxP_N_zgnDzivGsiN3b0QAXR7sghJXMI__YcxKL_45n3kMv_QyB0SRA4bNvzOjguSvtihViyHHb07Fi4-ZhDtgjVmWyLT3t_6oENQYPtEnxe5zPbRsdVW2I_3lF9CgU6gVc6ipIP"/>
-</div>
-<div>
-<div class="font-headline font-bold text-on-surface">CloudRunner Performance</div>
-<div class="text-xs text-on-surface-variant">服飾 • 鞋類</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5 font-mono text-sm text-on-surface-variant">SH-CRP-RD-11</td>
-<td class="px-6 py-5 text-right font-headline font-bold text-primary">$155.00</td>
-<td class="px-6 py-5">
-<div class="flex flex-col items-center gap-1">
-<span class="font-bold text-error">0</span>
-<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-error rounded-full w-0"></div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5">
-<span class="inline-flex items-center px-3 py-1 rounded-full bg-red-100 text-error text-[11px] font-bold uppercase tracking-tight">Out of Stock</span>
-</td>
-<td class="px-6 py-5 text-right">
-<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="edit">edit</span>
-</button>
-<button class="p-2 hover:bg-surface-container rounded-lg text-error transition-colors">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Product Item 4 -->
-<tr class="bg-surface-container-lowest group hover:bg-primary-fixed/20 transition-colors">
-<td class="px-6 py-5">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-outline-variant/10">
-<img class="w-full h-full object-cover" data-alt="Slim metallic digital tablet device" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTtVTLSwB3I__RuBBWIK9YmcfzPmbOOQHmhspOKzw3AYrZPYq2eVe9PPhw0XrSwMyUuAeVYWGYG4o-aJyw4kiVxRniihNOTLpo040szbIgeZN6yNkKiLvNQ_aBycdqINA7-saOL96kgPc2hVEB36zpxccd7m2xyQOdX89F7a_1ME3ygrJFm_19TRrQGTd-DCNpTi0t7iHmvH2wvA-pTE6AwlTCb3QAbeirxHlGuou_nDwlIfUevvwD1hAgwSQCoJg1AdPHihBr7Top"/>
-</div>
-<div>
-<div class="font-headline font-bold text-on-surface">TabPro Ultra 12"</div>
-<div class="text-xs text-on-surface-variant">電子產品 • 電腦</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5 font-mono text-sm text-on-surface-variant">EL-TPU-SL-12</td>
-<td class="px-6 py-5 text-right font-headline font-bold text-primary">$799.00</td>
-<td class="px-6 py-5">
-<div class="flex flex-col items-center gap-1">
-<span class="font-bold text-on-surface">15</span>
-<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-primary rounded-full w-[35%]"></div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5">
-<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-[11px] font-bold uppercase tracking-tight">In Stock</span>
-</td>
-<td class="px-6 py-5 text-right">
-<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="edit">edit</span>
-</button>
-<button class="p-2 hover:bg-surface-container rounded-lg text-error transition-colors">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
+<td class="px-6 py-4 text-sm font-mono text-on-surface-variant">BAK-042</td>
+<td class="px-6 py-4"><span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold rounded-full">BAKERY</span></td>
+<td class="px-6 py-4 text-sm"><span class="text-error font-bold">8 Low Stock</span></td>
+<td class="px-6 py-4 text-sm font-bold">$3.75</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-surface-container rounded-full"><span class="material-symbols-outlined text-on-surface-variant">edit</span></button>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<!-- Pagination-like footer for the list -->
-<div class="px-6 py-4 bg-surface-container-high flex items-center justify-between">
-<span class="text-xs text-on-surface-variant font-medium">顯示 124 項商品中的第 4 項</span>
-<div class="flex gap-1">
-<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">
-<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</div>
+</section>
+<!-- Screen 3: Orders (訂單歷史) -->
+<section class="page-container space-y-6" id="page-orders">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline font-bold text-2xl">Order History</h2>
+<p class="text-on-surface-variant text-sm">Review past transactions and export reports</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-outline-variant/30 rounded-lg text-sm flex items-center gap-2 hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                        Last 7 Days
+                    </button>
+<button class="px-4 py-2 bg-surface-container-highest rounded-lg text-sm flex items-center gap-2 hover:bg-surface-dim">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Export CSV
+                    </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Order Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-secondary-container shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Order #4829</p>
+<p class="text-xs text-on-surface-variant">Today, 10:42 AM</p>
+</div>
+<span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded">PAID</span>
+</div>
+<div class="space-y-2 mb-4">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">2x Signature Latte</span>
+<span class="font-medium">$9.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">1x Avocado Toast</span>
+<span class="font-medium">$12.50</span>
+</div>
+</div>
+<div class="pt-4 border-t border-dashed border-outline-variant/30 flex justify-between items-center">
+<span class="font-headline font-extrabold text-primary">$23.22</span>
+<button class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">
+                            Details <span class="material-symbols-outlined text-sm">chevron_right</span>
 </button>
-<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary text-xs font-bold">1</button>
-<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs font-medium">2</button>
-<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs font-medium">3</button>
-<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">
-<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Order #4828</p>
+<p class="text-xs text-on-surface-variant">Today, 09:15 AM</p>
+</div>
+<span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded">PAID</span>
+</div>
+<div class="space-y-2 mb-4">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">1x Chemex V60</span>
+<span class="font-medium">$6.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">1x Blueberry Muffin</span>
+<span class="font-medium">$4.00</span>
+</div>
+</div>
+<div class="pt-4 border-t border-dashed border-outline-variant/30 flex justify-between items-center">
+<span class="font-headline font-extrabold text-primary">$10.80</span>
+<button class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">
+                            Details <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-outline shadow-sm hover:shadow-md transition-shadow opacity-80">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Order #4827</p>
+<p class="text-xs text-on-surface-variant">Yesterday, 05:40 PM</p>
+</div>
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-bold rounded">REFUNDED</span>
+</div>
+<div class="space-y-2 mb-4">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">1x Ceramic Tumbler</span>
+<span class="font-medium">$25.00</span>
+</div>
+</div>
+<div class="pt-4 border-t border-dashed border-outline-variant/30 flex justify-between items-center">
+<span class="font-headline font-extrabold text-error">-$25.00</span>
+<button class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">
+                            Details <span class="material-symbols-outlined text-sm">chevron_right</span>
 </button>
 </div>
 </div>
 </div>
+</section>
+<!-- Screen 4: Analytics (數據分析) -->
+<section class="page-container space-y-6" id="page-analytics">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-primary">
+<p class="text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider">Total Sales</p>
+<h3 class="font-headline font-extrabold text-3xl text-primary">$12,482.00</h3>
+<p class="text-xs text-green-600 font-bold mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +14.2%
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-secondary-container">
+<p class="text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider">Transactions</p>
+<h3 class="font-headline font-extrabold text-3xl text-on-surface">342</h3>
+<p class="text-xs text-green-600 font-bold mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +5.8%
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-tertiary">
+<p class="text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider">Avg Order Value</p>
+<h3 class="font-headline font-extrabold text-3xl text-on-surface">$36.50</h3>
+<p class="text-xs text-error font-bold mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_down</span> -2.1%
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-outline">
+<p class="text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider">Store Occupancy</p>
+<h3 class="font-headline font-extrabold text-3xl text-on-surface">78%</h3>
+<p class="text-xs text-on-surface-variant font-bold mt-2">Peak Hour: 12:00 PM</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Chart Placeholder -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-headline font-bold">Revenue Over Time</h4>
+<select class="text-xs bg-surface-container border-none rounded">
+<option>This Week</option>
+<option>This Month</option>
+</select>
+</div>
+<div class="h-64 flex items-end justify-between gap-2 px-2">
+<div class="w-full bg-primary-container/20 rounded-t h-[40%] hover:bg-primary transition-all cursor-pointer"></div>
+<div class="w-full bg-primary-container/20 rounded-t h-[65%] hover:bg-primary transition-all cursor-pointer"></div>
+<div class="w-full bg-primary-container/20 rounded-t h-[55%] hover:bg-primary transition-all cursor-pointer"></div>
+<div class="w-full bg-primary-container/20 rounded-t h-[85%] hover:bg-primary transition-all cursor-pointer"></div>
+<div class="w-full bg-primary-container/20 rounded-t h-[75%] hover:bg-primary transition-all cursor-pointer"></div>
+<div class="w-full bg-primary-container/20 rounded-t h-[95%] hover:bg-primary transition-all cursor-pointer"></div>
+<div class="w-full bg-primary-container/20 rounded-t h-[60%] hover:bg-primary transition-all cursor-pointer"></div>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant mt-4 font-bold">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</div>
+<!-- Best Sellers -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<h4 class="font-headline font-bold mb-6">Top Performing Items</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Small latte image thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgzH2pjWu9j5AGllya3qs2pDszQkymZqKsKzkPbhVQlXebuqVzfm4P2FWj68BvSvsVd2FCb83OO1tJb35CBcjfGu1D-vLwrTHxRXTThdoojRVeV5g_JBcjFFQRKm7nizLTc6eHmbzUgLeo_nYsgd-XXYEIocHe059S68ZxG8LVLUi-0a5ElLlEF4tZRCM1Fs4FScCoVcFawnGFKJ6wrk6mHPEiaW9Ft3-B7qskP6g3Anlw-pFk_5aFs3M7n6OFII0GC6Ft64UbuM2s"/>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Signature Latte</p>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">1,240 sold</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Freshly baked croissant thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrdlH_5_vU0GNlfA39H5txSXT55bfMRFKW8NDUxL2K7cuJJZFMI9FZi8qdwByMMJPQVxJ3aMTTB2hHNqPxtWxypWZ-D8rvmkCNjOHuTZPNVAMYWjX2LtylqayHW0FexrCIoUF3v_XMZWUBulRlaed_pIak_vBhrEs2tfoVT6iMk45WjvCqWtdhdDFON1sx-MZjCWwfoRQXwxNXiiZrj7KA6nbLaEsXdVbSiAIsY9vtDcTPOSH75VflNCMleM0Iuq6E9vUqqU-Izfxe"/>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Butter Croissant</p>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-1">
+<div class="bg-secondary-container h-1.5 rounded-full" style="width: 62%"></div>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">892 sold</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Iced americano image thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwp8Im01rQx4V1txE3pas3MU5ekS0R1CWlQrJvw_h_DkGRGBPa0GmD_2mEfesxvJz_fDlglvVtxNA_gNyLi1Ky6qzvln6nySHnx4AGPJY3bmRyf9q4fwFczrE8yUlpa2rgjMgDCNQvOFgUEoRDE1-5s8wrovsUA7D_hPjP49OJj-v7s9f3xom5uxfyaNNcREtR49t2IHZbAwk1eh-UMRZ94AIX7KFVYPmgIo42Q-lgW4C418GeLWeH6JQP-9wLpTQS4FqBfIvm-9ZK"/>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Iced Americano</p>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 48%"></div>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">615 sold</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 </main>
-<!-- Management FAB -->
-<button class="fixed bottom-24 right-6 md:right-12 w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full shadow-xl flex items-center justify-center hover:scale-105 active:scale-90 transition-all z-40">
-<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
-</button>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 w-full z-50 rounded-t-[1.5rem] bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl border-t border-[#c3c6d5]/15 shadow-[0_-4px_20px_rgba(25,28,30,0.06)] flex justify-around items-center h-20 px-4 pb-safe w-full">
-<a class="flex flex-col items-center justify-center text-[#191c1e]/60 dark:text-slate-400 px-5 py-1.5 hover:text-[#00327d] dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="point_of_sale">point_of_sale</span>
-<span class="font-['Inter'] font-medium text-[11px]">收銀</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-[#dae2ff] dark:bg-blue-900/40 text-[#00327d] dark:text-blue-100 rounded-2xl px-5 py-1.5 active:scale-90 transition-transform duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-<span class="font-['Inter'] font-medium text-[11px]">商品</span>
-</a>
-<a class="flex flex-col items-center justify-center text-[#191c1e]/60 dark:text-slate-400 px-5 py-1.5 hover:text-[#00327d] dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
-<span class="font-['Inter'] font-medium text-[11px]">訂單</span>
-</a>
-<a class="flex flex-col items-center justify-center text-[#191c1e]/60 dark:text-slate-400 px-5 py-1.5 hover:text-[#00327d] dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
-<span class="font-['Inter'] font-medium text-[11px]">報表</span>
-</a>
+<nav class="fixed bottom-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl border-t border-[#c3c6d5]/15 shadow-[0_-4px_20px_rgba(25,28,30,0.06)] rounded-t-[1.5rem] flex justify-around items-center h-20 px-4 pb-safe w-full">
+<button class="nav-tab flex flex-col items-center justify-center active-tab text-[#00327d] dark:text-blue-100 bg-[#dae2ff] dark:bg-blue-900/40 rounded-2xl px-5 py-1.5 active:scale-90 transition-all duration-150" id="tab-register" onclick="showPage('register')">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">point_of_sale</span>
+<span class="font-label font-medium text-[11px]">Register</span>
+</button>
+<button class="nav-tab flex flex-col items-center justify-center text-[#191c1e]/60 dark:text-slate-400 px-5 py-1.5 hover:text-[#00327d] dark:hover:text-blue-300 active:scale-90 transition-all duration-150" id="tab-products" onclick="showPage('products')">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label font-medium text-[11px]">Products</span>
+</button>
+<button class="nav-tab flex flex-col items-center justify-center text-[#191c1e]/60 dark:text-slate-400 px-5 py-1.5 hover:text-[#00327d] dark:hover:text-blue-300 active:scale-90 transition-all duration-150" id="tab-orders" onclick="showPage('orders')">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label font-medium text-[11px]">Orders</span>
+</button>
+<button class="nav-tab flex flex-col items-center justify-center text-[#191c1e]/60 dark:text-slate-400 px-5 py-1.5 hover:text-[#00327d] dark:hover:text-blue-300 active:scale-90 transition-all duration-150" id="tab-analytics" onclick="showPage('analytics')">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label font-medium text-[11px]">Analytics</span>
+</button>
 </nav>
+<script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-container').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show current page
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+
+            // Update Nav Active State
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active-tab', 'text-[#00327d]', 'dark:text-blue-100', 'bg-[#dae2ff]', 'dark:bg-blue-900/40');
+                tab.classList.add('text-[#191c1e]/60', 'dark:text-slate-400');
+                // Reset icons
+                const icon = tab.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.fontVariationSettings = "'FILL' 0";
+            });
+
+            const activeTab = document.getElementById('tab-' + pageId);
+            if (activeTab) {
+                activeTab.classList.add('active-tab', 'text-[#00327d]', 'dark:text-blue-100', 'bg-[#dae2ff]', 'dark:bg-blue-900/40');
+                activeTab.classList.remove('text-[#191c1e]/60', 'dark:text-slate-400');
+                // Set active icon fill
+                const icon = activeTab.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.fontVariationSettings = "'FILL' 1";
+            }
+        }
+    </script>
 </body></html>
